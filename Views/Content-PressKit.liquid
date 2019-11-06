@@ -1,0 +1,259 @@
+﻿{% assign factsheet = Model.ContentItem.Content.Factsheet %}
+{% assign platforms = Model.ContentItem.Content.Platforms.ContentItems %}
+{% assign developerName = factsheet.Developer.Text %}
+
+{% assign features = Model.ContentItem.Content.Features.ContentItems %}
+{% assign videos = Model.ContentItem.Content.Videos.ContentItems %}
+
+{% assign images = Model.ContentItem.Content.Images %}
+
+{% assign logoIcon = Model.ContentItem.Content.LogoIcon %}
+
+{% assign articles = Model.ContentItem.Content.SelectedArticles.ContentItems %}
+
+{% assign links = Model.ContentItem.Content.AdditionalLinks.ContentItems %}
+
+{% assign studio = Model.ContentItem.Content.Studio %}
+
+{% assign credits = Model.ContentItem.Content.Credits.ContentItems %}
+
+{% assign contacts = Model.ContentItem.Content.Contact.ContentItems %}
+
+<section class="section">
+    <div class="section__content">
+        {{ Model.Header | shape_render }}
+
+        <ul class="list list--horizontal list--horizontal-spaced">
+            <li><a href="#factsheet">{{ "Factsheet" | t }}</a></li>
+            <li><a href="#description">{{ "Description" | t }}</a></li>
+            <li><a href="#history">{{ "History" | t }}</a></li>
+            <li><a href="#features">{{ "Features" | t }}</a></li>
+            <li><a href="#videos">{{ "Videos" | t }}</a></li>
+            <li><a href="#images">{{ "Images" | t }}</a></li>
+            <li><a href="#logo">{{ "Logo & Icon" | t }}</a></li>
+            <li><a href="#articles">{{ "Selected Articles" | t }}</a></li>
+            <li><a href="#links">{{ "Additional Links" | t }}</a></li>
+            <li><a href="#about">{{ "About Studio" | t }}</a></li>
+            <li><a href="#credits">{{ "Credits" | t }}</a></li>
+            <li><a href="#contact">{{ "Contact" | t }}</a></li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+        <h2 id="factsheet">{{ "Factsheet" | t }}</h2>
+
+        <ul class="list list--meta">
+            <li>
+                <div class="meta">
+                    <h3 class="meta__title">{{ "Developer" | t }}</h3>
+                    <div class="meta__value">
+                        <a href="{{ factsheet.DeveloperWebsite.Text }}">{{ developerName }}</a>
+                        <br />
+                        {{ factsheet.DeveloperLocation.Text }}
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="meta">
+                    <h3 class="meta__title">{{ "Release Date" | t }}</h3>
+                    <div class="meta__value">
+                        {{ factsheet.ReleaseDate.Text }}
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="meta">
+                    <h3 class="meta__title">{{ "Platforms" | t }}</h3>
+                    <div class="meta__value">
+                        <ul class="list">
+                            {% for platform in platforms %}
+                            <li>
+                                <a href="{{ platform.PressKitPlatform.Url.Text }}">{{ platform.PressKitPlatform.Name.Text }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="meta">
+                    <h3 class="meta__title">{{ "Website" | t }}</h3>
+                    <div class="meta__value">
+                        <a href="{{ factsheet.Website.Text }}">{{ factsheet.Website.Text | replace: "http://", "" | replace: "https://", "" }}</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="meta">
+                    <h3 class="meta__title">{{ "Regular Price" | t }}</h3>
+                    <div class="meta__value">
+                        {{ factsheet.RegularPrice.Text }}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{{ Model.Description | shape_render }}
+{{ Model.History | shape_render }}
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="features">{{ "Features" | t }}</h2>
+
+        <ul>
+            {% for feature in features %}
+            <li>{{ feature.PressKitFeature.Text.Text }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="videos">{{ "Videos" | t }}</h2>
+
+        <ul class="list">
+            {% for video in videos %}
+            <li>
+                <div class="embed">
+                    <p class="embed__caption">{{ video.TitlePart.Title }} - <a href="{{ video.PressKitVideo.VideoLinkUrl.Text }}">{{ video.PressKitVideo.Platform.Text }}</a></p>
+
+                    <div class="embed__source">
+                        <iframe src="{{ video.PressKitVideo.VideoEmbedUrl.Text }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="images">{{ "Images" | t }}</h2>
+
+        {% if images.Zip.Paths != null %}
+            <p><a href="{{ images.Zip.Paths[0] }}">{{ "Download all screenshots & photos as a .zip" | t }}</a></p>
+        {% endif %}
+
+        <ul class="list list--gallery js-gallery">
+            {% for media in images.Images.Paths %}
+            <li class="list__item">
+                <a href="{{ media | asset_url }}">
+                    <img src="{{ media | asset_url | resize_url: width:300, height: 200, mode:'crop' }}">
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="logo">{{ "Logo & Icon" | t }}</h2>
+
+        {% if logoIcon.Zip.Paths != null %}
+            <p><a href="{{ logoIcon.Zip.Paths[0] }}">{{ "Download logo & icon as a .zip" | t }}</a></p>
+        {% endif %}
+
+        <ul class="list list--gallery js-gallery">
+            {% if logoIcon.Logo.Paths != null %}
+            <li class="list__item">
+                <a href="{{ logoIcon.Logo.Paths[0] | asset_url }}">
+                    <img src="{{ logoIcon.Logo.Paths[0] | asset_url }}">
+                </a>
+            </li>
+            {% endif %}
+
+            {% if logoIcon.Icon.Paths != null %}
+            <li class="list__item">
+                <a href="{{ logoIcon.Icon.Paths[0] | asset_url }}">
+                    <img src="{{ logoIcon.Icon.Paths[0] | asset_url }}">
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="articles">{{ "Selected Articles" | t }}</h2>
+
+        <ul class="list">
+            {% for article in articles %}
+            <li class="list__item margin--bottom-large">
+                <blockquote class="margin--bottom-small">&ldquo;{{ article.PressKitSelectedArticle.Quote.Text }}&rdquo;</blockquote>
+                <p>{{ article.PressKitSelectedArticle.Author.Text }} - <a href="{{ article.PressKitSelectedArticle.Platform.Url }}">{{ article.PressKitSelectedArticle.Platform.Text }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="links">{{ "Additional Links" | t }}</h2>
+
+        <ul class="list">
+            {% for additionalLink in links %}
+            <li class="list__item margin--bottom-large">
+               <h3>{{ additionalLink.TitlePart.Title }}</h3>
+               <p>{{ additionalLink.PressKitAdditionalLink.Description.Text | raw }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="about">{{ "About" | t }} {{ developerName }}</h2>
+
+        <h3>{{ "Boilerplate" | t }}</h3>
+        <p>{{ studio.Boilerplate.Text | raw }}</p>
+
+        <h3>{{ "More Information" | t }}</h3>
+        <p>{{ studio.MoreInformation.Text | raw }}</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="credits">{{ Model.ContentItem.Content.PressKit.Game.Text }} {{ "Credits" | t }}</h2>
+
+        <ul class="list">
+            {% for credit in credits %}
+            <li class="list__item margin--bottom-large">
+                <h3 class="margin--bottom-small">{{ credit.PressKitCredit.Fullname.Text }}</h3>
+
+                {% if credit.PressKitCredit.LinkUrl.Text != null %}
+                    <p><a href="{{ credit.PressKitCredit.LinkUrl.Text }}">{{ credit.PressKitCredit.Role.Text }}</a></p>
+                {% else %}
+                    <p>{{ credit.PressKitCredit.Role.Text }}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content">
+	    <h2 id="contact">{{ "Contact" | t }}</h2>
+
+        <ul class="list">
+            {% for contact in contacts %}
+            <li class="list__item margin--bottom-large">
+                <h3 class="margin--bottom-small">{{ contact.PressKitContact.Platform.Text }}</h3>
+
+                <p><a href="{{ contact.PressKitContact.Link.Url }}">{{ contact.PressKitContact.Link.Text }}</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

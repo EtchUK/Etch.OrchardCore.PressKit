@@ -1,0 +1,9 @@
+﻿<section class="section">
+    <div class="section__content">
+	    <h2 id="description">{{ "Description" | t }}</h2>
+
+        {% for block in Model.Blocks %}
+            {{ block | shape_render }}
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,16 @@
+{
+    "BlockBodyPart": [
+        {
+            "contentType": ["PressKit"],
+            "contentPart": ["Description"],
+            "displayType": "Detail",
+            "place": "Description"
+        },
+        {
+            "contentType": ["PressKit"],
+            "contentPart": ["History"],
+            "displayType": "Detail",
+            "place": "History"
+        }
+    ]
+}

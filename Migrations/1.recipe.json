@@ -1,0 +1,37 @@
+{
+  "steps": [
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [],
+      "ContentParts": [
+        {
+          "Name": "PressKit",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "HeaderImage",
+              "Settings": {
+                "DisplayName": "Header Image",
+                "Position": "2",
+                "Editor": null,
+                "DisplayMode": null,
+                "Hint": "Image displayed as header when displaying as presskit(). Image should have dimensions of 1200x240.",
+                "Required": false,
+                "Multiple": false,
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false,
+                  "Template": null
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

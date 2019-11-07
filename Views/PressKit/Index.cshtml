@@ -1,0 +1,252 @@
+﻿@model Etch.OrchardCore.PressKit.ViewModels.PressKitViewModel
+
+@{ 
+    Layout = null;
+
+    var top = 0;
+    var height = Math.Ceiling((decimal)(Model.Images.Paths.Length / 2) * 251);
+}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>@Model.Factsheet.Developer</title>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/uikit/1.2.0/css/uikit.gradient.min.css" rel="stylesheet" type="text/css">
+        <link href="/Etch.OrchardCore.PressKit/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body style="">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div id="navigation" class="uk-width-medium-1-4">
+                    <h1 class="nav-header">@Model.Factsheet.Developer</h1>
+
+                    <ul class="uk-nav uk-nav-side">
+                        <li><a href="#factsheet">@T["Factsheet"]</a></li>
+                        <li><a href="#description">@T["Description"]</a></li>
+                        <li><a href="#history">@T["History"]</a></li>
+                        <li><a href="#projects">@T["Projects"]</a></li>
+                        <li><a href="#trailers">@T["Videos"]</a></li>
+                        <li><a href="#images">@T["Images"]</a></li>
+                        <li><a href="#logo">@T["Logo &amp; Icon"]</a></li>
+                        <li><a href="#quotes">@T["Selected Articles"]</a></li>
+                        <li><a href="#links">@T["Additional Links"]</a></li>
+                        <li><a href="#about">@T["About Mi-Clos Studio"]</a></li>
+                        <li><a href="#credits">@T["Team"]</a></li>
+                        <li><a href="#contact">@T["Contact"]</a></li>
+                    </ul>
+                </div>
+                <div id="content" class="uk-width-medium-3-4">
+                    @if (!string.IsNullOrEmpty(Model.HeaderImagePath)) { 
+                        <img src="@Orchard.AssetUrl(Model.HeaderImagePath)" class="header" />
+                    }
+
+                    <div class="uk-grid">
+                        <div class="uk-width-medium-2-6">
+                            <h2 id="factsheet">@T["Factsheet"]</h2>
+                            <p>
+                                <strong>@T["Developer:"]</strong><br>
+                                <a href="@Model.Factsheet.DeveloperWebsite">@Model.Factsheet.Developer</a><br>
+                                @Model.Factsheet.DeveloperLocation
+                            </p>
+                            <p>
+                                <strong>@T["Release date:"]</strong><br>
+                                @Model.Factsheet.ReleaseDate
+                            </p>
+
+                            <p>
+                                <strong>@T["Platforms:"]</strong><br>
+                                @foreach (var platform in Model.Factsheet.Platforms)
+                                {
+                                    <a href="@platform.Url">@platform.Name</a><br>
+                                }
+                            </p>
+                            <p>
+                                <strong>@T["Website:"]</strong><br>
+                                <a href="@Model.Factsheet.Website">@Model.Factsheet.Website.Replace("http://", "").Replace("https://", "")</a>
+                            </p>
+                            <p>
+                                <strong>@T["Regular Price:"]</strong><br>
+                                @Model.Factsheet.RegularPrice
+                            </p>
+                        </div>
+                        <div class="uk-width-medium-4-6">
+                            <h2 id="description">@T["Description"]</h2>
+
+                            @foreach (var block in Model.Description)
+                            {
+                                @await DisplayAsync(block);
+                            }
+
+                            <h2 id="history">@T["History"]</h2>
+
+                            @foreach (var block in Model.History)
+                            {
+                                @await DisplayAsync(block);
+                            }
+
+                            <h2>@T["Features"]</h2>
+                            <ul>
+                                @foreach (var feature in Model.Features)
+                                {
+                                    <li>@feature.Text</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h2 id="trailers">@T["Videos"]</h2>
+
+                    @foreach (var video in Model.Videos)
+                    {
+                        <p><strong>@video.Title</strong>&nbsp;<a href="@video.VideoLinkUrl">@video.Platform</a></p>
+                        <div class="uk-responsive-width iframe-container">
+                            <iframe src="@video.VideoEmbedUrl" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                        <p></p>
+                    }
+
+                    <hr>
+
+                    <h2 id="images">@T["Images"]</h2>
+
+                    @if (!string.IsNullOrEmpty(Model.Images.ArchivePath))
+                    {
+                        <a href="@Orchard.AssetUrl(Model.Images.ArchivePath)">
+                            <div class="uk-alert">@T["download all screenshots &amp; photos as .zip"]</div>
+                        </a>
+                    }
+
+                    <div class="uk-grid images" style="position: relative; height: @(height)px;">
+                        @for (var i = 0; i < Model.Images.Paths.Length; i++)
+                        {
+                            var left = i % 2 == 0 ? "436px" : "0px";
+                            top = i % 2 == 0 ? top + 251 : top;
+                            <div class="uk-width-medium-1-2" style="position: absolute; left: @left; top: @(top)px;"><a href="@Orchard.AssetUrl(Model.Images.Paths[i])"><img src="@Orchard.AssetUrl(Model.Images.Paths[i])" alt="@(System.IO.Path.GetFileName(Model.Images.Paths[i]))"></a></div>
+                        }
+                    </div>
+
+                    <hr>
+
+                    <h2 id="logo">@T["Logo &amp; Icon"]</h2>
+
+                    @if (!string.IsNullOrEmpty(Model.LogoIcon.ArchivePath))
+                    {
+                        <a href="@Orchard.AssetUrl(Model.LogoIcon.ArchivePath)">
+                            <div class="uk-alert">@T["download all logo &amp; icons as .zip"]</div>
+                        </a>
+                    }
+
+                    <div class="uk-grid images" style="position: relative; height: 200px;">
+                        @if (!string.IsNullOrEmpty(Model.LogoIcon.Logo))
+                        {
+                            <div class="uk-width-medium-1-2" style="position: absolute; left: 0px; top: 0px;">
+                                <a href="@Orchard.AssetUrl(Model.LogoIcon.Logo)"><img src="@Orchard.AssetUrl(Model.LogoIcon.Logo)" alt="logo"></a>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.LogoIcon.Icon))
+                        {
+                            <div class="uk-width-medium-1-2" style="position: absolute; left: 436px; top: 0px;">
+                                <a href="@Orchard.AssetUrl(Model.LogoIcon.Icon)"><img src="@Orchard.AssetUrl(Model.LogoIcon.Icon)" alt="logo"></a>
+                            </div>
+                        }
+                    </div>
+
+                    <hr>
+
+                    <h2 id="quotes">@T["Selected Articles"]</h2>
+                    <ul>
+                        @foreach (var article in Model.Articles)
+                        {
+                            <li>
+                                "@article.Quote" <br>
+                                <cite>- @article.Author, <a href="@article.PlatformUrl">@article.PlatformText</a></cite>
+                            </li>
+                        }
+                    </ul>
+
+                    <hr>
+
+                    <h2 id="links">@T["Additional Links"]</h2>
+
+                    <ul>
+                        @foreach (var link in Model.Links)
+                        {
+                            <li>
+                                <p>
+                                    @link.Title<br>
+                                @link.Description
+                            </p>
+                        </li>
+                    }
+                    </ul>
+
+                    <hr>
+
+                    <h2 id="about">@T["About"] @Model.Factsheet.Developer</h2>
+                    <p>
+                        <strong>@T["Boilerplate"]</strong><br>
+                        @Html.Raw(Model.Studio.Boilerplate)
+                    </p>
+
+                    <p>
+                        <strong>@T["More information"]</strong><br>
+                        @Html.Raw(Model.Studio.MoreInformation)
+                    </p>
+
+                    <hr>
+
+                    <div class="uk-grid">
+                        <div class="uk-width-medium-1-2">
+                            <h2 id="credits">@Model.Factsheet.Game @T["Credits"]</h2>
+
+                            @foreach (var credit in Model.Credits)
+                            {
+                                <p>
+                                    <strong>@credit.Fullname</strong><br>
+                                    <a href="@credit.LinkUrl">@credit.Role</a>
+                                </p>
+                            }
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <h2 id="contact">@T["Contact"]</h2>
+
+                            @foreach (var contact in Model.Contacts)
+                            {
+                                <p>
+                                    <strong>@contact.Platform</strong><br>
+                                    <a href="@contact.LinkUrl">@contact.LinkText</a>
+                                </p>
+                            }
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <p><a href="http://dopresskit.com/">presskit()</a> by Rami Ismail (<a href="http://www.vlambeer.com/">Vlambeer</a>)</p>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+        <script type="text/javascript">
+			$( document ).ready(function() {
+				var container = $('.images');
+
+				container.imagesLoaded( function() {
+					container.masonry({
+						itemSelector: '.uk-width-medium-1-2',
+					});
+				});
+			});
+        </script>
+        <script type="text/javascript" src="/Etch.OrchardCore.PressKit/validation.js"></script>
+    </body>
+ </html>

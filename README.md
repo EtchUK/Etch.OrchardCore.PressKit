@@ -22,4 +22,6 @@ Once a reference to this module has been configured there will be a "Press Kit" 
 
 ## Features
 
-Defines content definitions for creating a "Press Kit". Displays "Press Kit" content item in industry expected format.
+Defines content definitions for creating a "Press Kit". Displays "Press Kit" content item in industry expected format. 
+
+By default the press kit will be displayed using the active theme. Optionally the display can be toggled to have the appearance of [presskit()](https://dopresskit.com/).

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.2.0-beta3</Version>
+    <Version>0.2.1-beta3</Version>
     <PackageId>Etch.OrchardCore.PressKit</PackageId>
     <Title>Press kit</Title>
     <Authors>Etch UK Ltd.</Authors>

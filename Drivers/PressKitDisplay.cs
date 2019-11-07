@@ -32,7 +32,8 @@ namespace Etch.OrchardCore.PressKit.Drivers
         {
             if (context.DisplayType == "Detail" && part.UsePressKitDisplay)
             {
-                _httpContextAccessor.HttpContext.Response.Redirect($"/demo/press-kit/{part.ContentItem.ContentItemId}", false);
+                var httpContext = _httpContextAccessor.HttpContext;
+                httpContext.Response.Redirect($"{httpContext.Request.PathBase}/press-kit/{part.ContentItem.ContentItemId}", false);
             }
 
             return null;

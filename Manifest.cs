@@ -5,7 +5,7 @@ using OrchardCore.Modules.Manifest;
     Category = "Content",
     Description = "Simplify creating press kits for games industry.",
     Name = "Press Kit",
-    Version = "0.2.2",
+    Version = "0.3.0",
     Website = "https://etchuk.com",
-    Dependencies = new string[] { "Etch.OrchardCore.Blocks", "Etch.OrchardCore.Blocks.EditorJS" }
+    Dependencies = new string[] { "Etch.OrchardCore.Blocks" }
 )]

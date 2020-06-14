@@ -7,33 +7,38 @@
             "Name": "PressKit",
             "DisplayName": "Press Kit",
             "Settings": {
-              "Creatable": "True",
-              "Draftable": "True",
-              "Versionable": "True",
-              "Listable": "True",
-              "Securable": "True",
-              "Stereotype": null
+              "ContentTypeSettings": {
+                "Creatable": true,
+                "Listable": true,
+                "Draftable": true,
+                "Versionable": true,
+                "Securable": true
+              },
+              "FullTextAspectSettings": {}
             },
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKit",
                 "Name": "PressKit",
                 "Settings": {
-                  "Position": "2"
+                  "ContentTypePartSettings": {
+                    "Position": "2"
+                  }
                 }
               },
               {
                 "PartName": "AutoroutePart",
                 "Name": "AutoroutePart",
                 "Settings": {
-                  "Position": "1",
-                  "DisplayName": null,
-                  "Description": null,
-                  "Editor": null,
-                  "Pattern": "{{ ContentItem | display_text | slugify }}",
-                  "AllowCustomPath": "True",
-                  "AllowUpdatePath": "True",
-                  "ShowHomepageOption": "False",
+                  "ContentTypePartSettings": {
+                    "Position": "1"
+                  },
+                  "AutoroutePartSettings": {
+                    "AllowCustomPath": true,
+                    "Pattern": "{{ ContentItem | display_text | slugify }}",
+                    "AllowUpdatePath": false,
+                    "ShowHomepageOption": false
+                  },
                   "ContentIndexSettings": {}
                 }
               },
@@ -41,169 +46,201 @@
                 "PartName": "TitlePart",
                 "Name": "TitlePart",
                 "Settings": {
-                  "Position": "0"
+                  "ContentTypePartSettings": {
+                    "Position": "0"
+                  }
                 }
               },
               {
                 "PartName": "BagPart",
                 "Name": "Platforms",
                 "Settings": {
-                  "DisplayName": "Platforms",
-                  "Description": "Platforms game is available on.",
-                  "Editor": null,
-                  "ContainedContentTypes": [
-                    "PressKitPlatform"
-                  ],
-                  "DisplayType": null,
                   "ContentIndexSettings": {},
-                  "Position": "4"
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Platforms",
+                    "Description": "Platforms game is available on.",
+                    "Position": "4"
+                  },
+                  "BagPartSettings": {
+                    "ContainedContentTypes": [
+                      "PressKitPlatform"
+                    ],
+                    "DisplayType": null
+                  }
                 }
               },
               {
                 "PartName": "BagPart",
                 "Name": "Features",
                 "Settings": {
-                  "DisplayName": "Features",
-                  "Description": "Features that contribute to game.",
-                  "Position": "7",
-                  "Editor": null,
-                  "ContainedContentTypes": [
-                    "PressKitFeature"
-                  ],
-                  "DisplayType": null,
-                  "ContentIndexSettings": {}
+                  "ContentIndexSettings": {},
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Features",
+                    "Description": "Features that contribute to game.",
+                    "Position": "7"
+                  },
+                  "BagPartSettings": {
+                    "ContainedContentTypes": [
+                      "PressKitFeature"
+                    ],
+                    "DisplayType": null
+                  }
                 }
               },
               {
                 "PartName": "BagPart",
                 "Name": "Videos",
                 "Settings": {
-                  "DisplayName": "Videos",
-                  "Description": "Provides a collection behavior for your content item.",
-                  "Position": "8",
-                  "Editor": null,
-                  "ContainedContentTypes": [
-                    "PressKitVideo"
-                  ],
-                  "DisplayType": null,
-                  "ContentIndexSettings": {}
+                  "ContentIndexSettings": {},
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Videos",
+                    "Description": "Provides a collection behavior for your content item.",
+                    "Position": "8"
+                  },
+                  "BagPartSettings": {
+                    "ContainedContentTypes": [
+                      "PressKitVideo"
+                    ],
+                    "DisplayType": null
+                  }
                 }
               },
               {
                 "PartName": "PressKitFactsheet",
                 "Name": "Factsheet",
                 "Settings": {
-                  "DisplayName": "Factsheet",
-                  "Description": "Details about game.",
-                  "Position": "3"
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Factsheet",
+                    "Description": "Details about game.",
+                    "Position": "3"
+                  }
                 }
               },
               {
                 "PartName": "PressKitImages",
                 "Name": "Images",
                 "Settings": {
-                  "DisplayName": "Images",
-                  "Description": "Collection of screenshots & photos.",
-                  "Position": "9"
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Images",
+                    "Description": "Collection of screenshots & photos.",
+                    "Position": "9"
+                  }
                 }
               },
               {
                 "PartName": "BagPart",
                 "Name": "SelectedArticles",
                 "Settings": {
-                  "DisplayName": "Selected Articles",
-                  "Description": "Collection of articles about game.",
-                  "Position": "11",
-                  "Editor": null,
-                  "ContainedContentTypes": [
-                    "PressKitSelectedArticle"
-                  ],
-                  "DisplayType": null,
-                  "ContentIndexSettings": {}
+                  "ContentIndexSettings": {},
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Selected Articles",
+                    "Description": "Collection of articles about game.",
+                    "Position": "11"
+                  },
+                  "BagPartSettings": {
+                    "ContainedContentTypes": [
+                      "PressKitSelectedArticle"
+                    ],
+                    "DisplayType": null
+                  }
                 }
               },
               {
                 "PartName": "BagPart",
                 "Name": "AdditionalLinks",
                 "Settings": {
-                  "DisplayName": "Additional Links",
-                  "Description": "Collection of links about game.",
-                  "Position": "12",
-                  "Editor": null,
-                  "ContainedContentTypes": [
-                    "PressKitAdditionalLink"
-                  ],
-                  "DisplayType": null,
-                  "ContentIndexSettings": {}
+                  "ContentIndexSettings": {},
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Additional Links",
+                    "Description": "Collection of links about game.",
+                    "Position": "12"
+                  },
+                  "BagPartSettings": {
+                    "ContainedContentTypes": [
+                      "PressKitAdditionalLink"
+                    ],
+                    "DisplayType": null
+                  }
                 }
               },
               {
                 "PartName": "PressKitStudio",
                 "Name": "Studio",
                 "Settings": {
-                  "DisplayName": "Studio",
-                  "Description": "Information about studio that produced game.",
-                  "Position": "13"
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Studio",
+                    "Description": "Information about studio that produced game.",
+                    "Position": "13"
+                  }
                 }
               },
               {
                 "PartName": "BagPart",
                 "Name": "Credits",
                 "Settings": {
-                  "DisplayName": "Credits",
-                  "Description": "Provides a collection behavior for your content item.",
-                  "Position": "14",
-                  "Editor": null,
-                  "ContainedContentTypes": [
-                    "PressKitCredit"
-                  ],
-                  "DisplayType": null,
-                  "ContentIndexSettings": {}
+                  "ContentIndexSettings": {},
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Credits",
+                    "Description": "Provides a collection behavior for your content item.",
+                    "Position": "14"
+                  },
+                  "BagPartSettings": {
+                    "ContainedContentTypes": [
+                      "PressKitCredit"
+                    ],
+                    "DisplayType": null
+                  }
                 }
               },
               {
                 "PartName": "BagPart",
                 "Name": "Contact",
                 "Settings": {
-                  "DisplayName": "Contact",
-                  "Description": "Methods for contacting about game.",
-                  "Position": "15",
-                  "Editor": null,
-                  "ContainedContentTypes": [
-                    "PressKitContact"
-                  ],
-                  "DisplayType": null,
-                  "ContentIndexSettings": {}
+                  "ContentIndexSettings": {},
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Contact",
+                    "Description": "Methods for contacting about game.",
+                    "Position": "15"
+                  },
+                  "BagPartSettings": {
+                    "ContainedContentTypes": [
+                      "PressKitContact"
+                    ],
+                    "DisplayType": null
+                  }
                 }
               },
               {
                 "PartName": "PressKitLogoIcon",
                 "Name": "LogoIcon",
                 "Settings": {
-                  "DisplayName": "Logo & Icon",
-                  "Description": "Logo & icon for game.",
-                  "Position": "10"
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Logo & Icon",
+                    "Description": "Logo & icon for game.",
+                    "Position": "10"
+                  }
                 }
               },
               {
                 "PartName": "BlockBodyPart",
                 "Name": "Description",
                 "Settings": {
-                  "DisplayName": "Description",
-                  "Description": "Short description of game.",
-                  "Position": "5",
-                  "Editor": null,
-                  "LinkableContentTypes": [],
-                  "ContentIndexSettings": {}
+                  "ContentTypePartSettings": {
+                    "DisplayName": "Description",
+                    "Description": "Short description of game.",
+                    "Position": "5"
+                  }
                 }
               },
               {
                 "PartName": "BlockBodyPart",
                 "Name": "History",
                 "Settings": {
-                  "DisplayName": "History",
-                  "Description": "Brief history about game.",
-                  "Position": "6"
+                  "ContentTypePartSettings": {
+                    "DisplayName": "History",
+                    "Description": "Brief history about game.",
+                    "Position": "6"
+                  }
                 }
               }
             ]
@@ -211,14 +248,7 @@
           {
             "Name": "PressKitPlatform",
             "DisplayName": "Press Kit Platform",
-            "Settings": {
-              "Creatable": "False",
-              "Draftable": "False",
-              "Versionable": "False",
-              "Listable": "False",
-              "Securable": "False",
-              "Stereotype": null
-            },
+            "Settings": {},
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKitPlatform",
@@ -232,14 +262,7 @@
           {
             "Name": "PressKitFeature",
             "DisplayName": "Press Kit Feature",
-            "Settings": {
-              "Creatable": "False",
-              "Draftable": "False",
-              "Versionable": "False",
-              "Listable": "False",
-              "Securable": "False",
-              "Stereotype": null
-            },
+            "Settings": {},
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKitFeature",
@@ -253,14 +276,7 @@
           {
             "Name": "PressKitVideo",
             "DisplayName": "Press Kit Video",
-            "Settings": {
-              "Creatable": "False",
-              "Draftable": "False",
-              "Versionable": "False",
-              "Listable": "False",
-              "Securable": "False",
-              "Stereotype": null
-            },
+            "Settings": {},
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKitVideo",
@@ -281,14 +297,7 @@
           {
             "Name": "PressKitSelectedArticle",
             "DisplayName": "Press Kit Selected Article",
-            "Settings": {
-              "Creatable": "False",
-              "Draftable": "False",
-              "Versionable": "False",
-              "Listable": "False",
-              "Securable": "False",
-              "Stereotype": null
-            },
+            "Settings": {},
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKitSelectedArticle",
@@ -302,14 +311,7 @@
           {
             "Name": "PressKitAdditionalLink",
             "DisplayName": "Press Kit Additional Link",
-            "Settings": {
-              "Creatable": "False",
-              "Draftable": "False",
-              "Versionable": "False",
-              "Listable": "False",
-              "Securable": "False",
-              "Stereotype": null
-            },
+            "Settings": {},
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKitAdditionalLink",
@@ -330,14 +332,7 @@
           {
             "Name": "PressKitCredit",
             "DisplayName": "Press Kit Credit",
-            "Settings": {
-              "Creatable": "False",
-              "Draftable": "False",
-              "Versionable": "False",
-              "Listable": "False",
-              "Securable": "False",
-              "Stereotype": null
-            },
+            "Settings": {},
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKitCredit",
@@ -351,14 +346,7 @@
           {
             "Name": "PressKitContact",
             "DisplayName": "Press Kit Contact",
-            "Settings": {
-              "Creatable": "False",
-              "Draftable": "False",
-              "Versionable": "False",
-              "Listable": "False",
-              "Securable": "False",
-              "Stereotype": null
-            },
+            "Settings": {},
             "ContentTypePartDefinitionRecords": [
               {
                 "PartName": "PressKitContact",
@@ -374,58 +362,72 @@
           {
             "Name": "PressKitFactsheet",
             "Settings": {
-              "Attachable": "False",
-              "Reusable": "True",
-              "Description": "Factsheet fields for press kit.",
-              "DisplayName": "Press Kit Factsheet"
+              "ContentPartSettings": {
+                "Attachable": false,
+                "Description": "Factsheet fields for press kit.",
+                "DisplayName": "Press Kit Factsheet",
+                "Reusable": true
+              }
             },
             "ContentPartFieldDefinitionRecords": [
               {
                 "FieldName": "TextField",
                 "Name": "Developer",
                 "Settings": {
-                  "DisplayName": "Developer",
-                  "Position": "0"
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Developer",
+                    "Position": "0"
+                  }
                 }
               },
               {
                 "FieldName": "TextField",
                 "Name": "DeveloperLocation",
                 "Settings": {
-                  "DisplayName": "Developer Location",
-                  "Position": "2"
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Developer Location",
+                    "Position": "2"
+                  }
                 }
               },
               {
                 "FieldName": "TextField",
                 "Name": "ReleaseDate",
                 "Settings": {
-                  "DisplayName": "Release Date",
-                  "Position": "3"
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Release Date",
+                    "Position": "3"
+                  }
                 }
               },
               {
                 "FieldName": "TextField",
                 "Name": "Website",
                 "Settings": {
-                  "DisplayName": "Website",
-                  "Position": "4"
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Website",
+                    "Position": "4"
+                  }
                 }
               },
               {
                 "FieldName": "TextField",
                 "Name": "RegularPrice",
                 "Settings": {
-                  "DisplayName": "Regular Price",
-                  "Position": "5"
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Regular Price",
+                    "Position": "5"
+                  }
                 }
               },
               {
                 "FieldName": "TextField",
                 "Name": "DeveloperWebsite",
                 "Settings": {
-                  "DisplayName": "Developer Website",
-                  "Position": "1"
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Developer Website",
+                    "Position": "1"
+                  }
                 }
               }
             ]
@@ -438,19 +440,12 @@
                 "FieldName": "TextField",
                 "Name": "Name",
                 "Settings": {
-                  "DisplayName": "Name",
-                  "Position": "0",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Name of platform game is available on (e.g. \"PC / Mac / Linux\").",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Name",
+                    "Position": "0"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Name of platform game is available on (e.g. \"PC / Mac / Linux\")."
                   }
                 }
               },
@@ -458,19 +453,12 @@
                 "FieldName": "TextField",
                 "Name": "Url",
                 "Settings": {
-                  "DisplayName": "Url",
-                  "Position": "1",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Link to view game on platform (e.g. https://store.steampowered.com/app/570/Dota_2/).",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Url",
+                    "Position": "1"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Link to view game on platform (e.g. https://store.steampowered.com/app/570/Dota_2/)."
                   }
                 }
               }
@@ -484,19 +472,13 @@
                 "FieldName": "TextField",
                 "Name": "Text",
                 "Settings": {
-                  "DisplayName": "Text",
-                  "Position": "0",
-                  "Editor": "TextArea",
-                  "DisplayMode": null,
-                  "Hint": "Explanation of the feature.",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Url",
+                    "Editor": "TextArea",
+                    "Position": "0"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Explanation of the feature."
                   }
                 }
               }
@@ -510,19 +492,12 @@
                 "FieldName": "TextField",
                 "Name": "Platform",
                 "Settings": {
-                  "DisplayName": "Platform",
-                  "Position": "0",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Platform that video is hosted on (e.g. YouTube).",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Platform",
+                    "Position": "0"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Platform that video is hosted on (e.g. YouTube)."
                   }
                 }
               },
@@ -530,19 +505,12 @@
                 "FieldName": "TextField",
                 "Name": "VideoLinkUrl",
                 "Settings": {
-                  "DisplayName": "Video Link Url",
-                  "Position": "1",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Link to view video on platform (e.g. https://www.youtube.com/watch?v=TorVk3Hxm7Q).",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Video Link Url",
+                    "Position": "1"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Link to view video on platform (e.g. https://www.youtube.com/watch?v=TorVk3Hxm7Q)."
                   }
                 }
               },
@@ -550,19 +518,12 @@
                 "FieldName": "TextField",
                 "Name": "VideoEmbedUrl",
                 "Settings": {
-                  "DisplayName": "Video Embed Url",
-                  "Position": "2",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "URL to embed video within this site (e.g. https://www.youtube.com/embed/TorVk3Hxm7Q).",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Video Embed Url",
+                    "Position": "2"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "URL to embed video within this site (e.g. https://www.youtube.com/embed/TorVk3Hxm7Q)."
                   }
                 }
               }
@@ -571,52 +532,44 @@
           {
             "Name": "PressKitImages",
             "Settings": {
-              "Attachable": "False",
-              "Reusable": "True",
-              "Description": "Collection of screenshots & photos.",
-              "DisplayName": "Press Kit Images"
+              "ContentPartSettings": {
+                "Attachable": false,
+                "Description": "Collection of screenshots & photos.",
+                "DisplayName": "Press Kit Images",
+                "Reusable": true
+              }
             },
             "ContentPartFieldDefinitionRecords": [
               {
                 "FieldName": "MediaField",
                 "Name": "Zip",
                 "Settings": {
-                  "DisplayName": "Zip",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Archive file containing all images.",
-                  "Required": false,
-                  "Multiple": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Zip",
+                    "Position": "0"
                   },
-                  "Position": "0"
+                  "MediaFieldSettings": {
+                    "Hint": "Archive file containing all images.",
+                    "Required": false,
+                    "Multiple": false
+                  },
+                  "ContentIndexSettings": {}
                 }
               },
               {
                 "FieldName": "MediaField",
                 "Name": "Images",
                 "Settings": {
-                  "DisplayName": "Images",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": null,
-                  "Required": false,
-                  "Multiple": true,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Images",
+                    "Position": "1"
                   },
-                  "Position": "1"
+                  "MediaFieldSettings": {
+                    "Hint": "Archive file containing all images.",
+                    "Required": false,
+                    "Multiple": true
+                  },
+                  "ContentIndexSettings": {}
                 }
               }
             ]
@@ -629,39 +582,26 @@
                 "FieldName": "TextField",
                 "Name": "Quote",
                 "Settings": {
-                  "DisplayName": "Quote",
-                  "Editor": "TextArea",
-                  "DisplayMode": null,
-                  "Hint": "Quote from external resource that will be displayed within speech marks.",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Quote",
+                    "Editor": "TextArea",
+                    "Position": "0"
                   },
-                  "Position": "0"
+                  "TextFieldSettings": {
+                    "Hint": "Quote from external resource that will be displayed within speech marks."
+                  }
                 }
               },
               {
                 "FieldName": "TextField",
                 "Name": "Author",
                 "Settings": {
-                  "DisplayName": "Author",
-                  "Position": "1",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Entity/person whom quote is from (e.g. Graham Smith).",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Author",
+                    "Position": "1"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Entity/person whom quote is from (e.g. Graham Smith)."
                   }
                 }
               },
@@ -669,26 +609,14 @@
                 "FieldName": "LinkField",
                 "Name": "Platform",
                 "Settings": {
-                  "DisplayName": "Platform",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "URL to view the original article.",
-                  "HintLinkText": null,
-                  "Required": false,
-                  "LinkTextMode": 0,
-                  "UrlPlaceholder": null,
-                  "TextPlaceholder": null,
-                  "DefaultUrl": null,
-                  "DefaultText": null,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Platform",
+                    "Position": "2"
                   },
-                  "Position": "2"
+                  "LinkFieldSettings": {
+                    "Hint": "URL to view the original article.",
+                    "LinkTextMode": 0
+                  }
                 }
               }
             ]
@@ -701,18 +629,13 @@
                 "FieldName": "TextField",
                 "Name": "Description",
                 "Settings": {
-                  "DisplayName": "Description",
-                  "Editor": "TextArea",
-                  "DisplayMode": null,
-                  "Hint": "Short description describing the additional link. Accepts HTML.",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Description",
+                    "Editor": "TextArea",
+                    "Position": "0"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Short description describing the additional link. Accepts HTML."
                   }
                 }
               }
@@ -721,50 +644,40 @@
           {
             "Name": "PressKitStudio",
             "Settings": {
-              "Attachable": "False",
-              "Reusable": "True",
-              "Description": "Information about studio that created game.",
-              "DisplayName": "Press Kit Studio"
+              "ContentPartSettings": {
+                "Attachable": false,
+                "Description": "Information about studio that created game.",
+                "DisplayName": "Press Kit Studio",
+                "Reusable": true
+              }
             },
             "ContentPartFieldDefinitionRecords": [
               {
                 "FieldName": "TextField",
                 "Name": "Boilerplate",
                 "Settings": {
-                  "DisplayName": "Boilerplate",
-                  "Editor": "TextArea",
-                  "DisplayMode": null,
-                  "Hint": "Basic information about the developer. Accepts HTML.",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Boilerplate",
+                    "Editor": "TextArea",
+                    "Position": "0"
                   },
-                  "Position": "0"
+                  "TextFieldSettings": {
+                    "Hint": "Basic information about the developer. Accepts HTML."
+                  }
                 }
               },
               {
                 "FieldName": "TextField",
                 "Name": "MoreInformation",
                 "Settings": {
-                  "DisplayName": "More Information",
-                  "Editor": "TextArea",
-                  "DisplayMode": null,
-                  "Hint": "Instructions on how to gain more information about the developer. Accepts HTML.",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "More Information",
+                    "Editor": "TextArea",
+                    "Position": "1"
                   },
-                  "Position": "1"
+                  "TextFieldSettings": {
+                    "Hint": "Instructions on how to gain more information about the developer. Accepts HTML."
+                  }
                 }
               }
             ]
@@ -777,19 +690,12 @@
                 "FieldName": "TextField",
                 "Name": "Fullname",
                 "Settings": {
-                  "DisplayName": "Name",
-                  "Position": "0",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Name of whom is receiving credit (e.g. John Smith).",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Name",
+                    "Position": "0"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Name of whom is receiving credit (e.g. John Smith)."
                   }
                 }
               },
@@ -797,19 +703,12 @@
                 "FieldName": "TextField",
                 "Name": "Role",
                 "Settings": {
-                  "DisplayName": "Role",
-                  "Position": "1",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Role of entity/person.",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Role",
+                    "Position": "1"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Role of entity/person."
                   }
                 }
               },
@@ -817,19 +716,12 @@
                 "FieldName": "TextField",
                 "Name": "LinkUrl",
                 "Settings": {
-                  "DisplayName": "Link Url",
-                  "Position": "2",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "URL to find out more information about entity/person.",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Link Url",
+                    "Position": "2"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "URL to find out more information about entity/person."
                   }
                 }
               }
@@ -843,19 +735,12 @@
                 "FieldName": "TextField",
                 "Name": "Platform",
                 "Settings": {
-                  "DisplayName": "Platform",
-                  "Position": "0",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Method of communication (e.g. Twitter).",
-                  "Required": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Platform",
+                    "Position": "0"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": "Method of communication (e.g. Twitter)."
                   }
                 }
               },
@@ -863,26 +748,14 @@
                 "FieldName": "LinkField",
                 "Name": "Link",
                 "Settings": {
-                  "DisplayName": "Link",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "URL user is navigated to when selecting contact link.",
-                  "HintLinkText": null,
-                  "Required": false,
-                  "LinkTextMode": 0,
-                  "UrlPlaceholder": null,
-                  "TextPlaceholder": null,
-                  "DefaultUrl": null,
-                  "DefaultText": null,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Link",
+                    "Position": "1"
                   },
-                  "Position": "1"
+                  "LinkFieldSettings": {
+                    "Hint": "URL user is navigated to when selecting contact link.",
+                    "LinkTextMode": 0
+                  }
                 }
               }
             ]
@@ -890,73 +763,60 @@
           {
             "Name": "PressKitLogoIcon",
             "Settings": {
-              "Attachable": "False",
-              "Reusable": "True",
-              "Description": "Logo & icon imagery.",
-              "DisplayName": "Press Kit Logo Icon"
+              "ContentPartSettings": {
+                "Attachable": false,
+                "Description": "Logo & icon imagery.",
+                "DisplayName": "Press Kit Logo Icon",
+                "Reusable": true
+              }
             },
             "ContentPartFieldDefinitionRecords": [
               {
                 "FieldName": "MediaField",
                 "Name": "Zip",
                 "Settings": {
-                  "DisplayName": "Zip",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Archive file containing both the logo & icon image.",
-                  "Required": false,
-                  "Multiple": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Zip",
+                    "Position": "0"
                   },
-                  "Position": "0"
+                  "MediaFieldSettings": {
+                    "Hint": "Archive file containing both the logo & icon image.",
+                    "Required": false,
+                    "Multiple": false
+                  },
+                  "ContentIndexSettings": {}
                 }
               },
               {
                 "FieldName": "MediaField",
                 "Name": "Logo",
                 "Settings": {
-                  "DisplayName": "Logo",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Logo for game.",
-                  "Required": false,
-                  "Multiple": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Logo",
+                    "Position": "1"
                   },
-                  "Position": "1"
+                  "MediaFieldSettings": {
+                    "Hint": "Logo for game.",
+                    "Required": false,
+                    "Multiple": false
+                  },
+                  "ContentIndexSettings": {}
                 }
               },
               {
                 "FieldName": "MediaField",
                 "Name": "Icon",
                 "Settings": {
-                  "DisplayName": "Icon",
-                  "Editor": null,
-                  "DisplayMode": null,
-                  "Hint": "Icon that represents game.",
-                  "Required": false,
-                  "Multiple": false,
-                  "ContentIndexSettings": {
-                    "Included": false,
-                    "Stored": false,
-                    "Analyzed": false,
-                    "Sanitized": false,
-                    "Tokenized": false,
-                    "Template": null
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Icon",
+                    "Position": "2"
                   },
-                  "Position": "2"
+                  "MediaFieldSettings": {
+                    "Hint": "Icon that represents game.",
+                    "Required": false,
+                    "Multiple": false
+                  },
+                  "ContentIndexSettings": {}
                 }
               }
             ]
@@ -969,8 +829,13 @@
                 "FieldName": "TextField",
                 "Name": "Game",
                 "Settings": {
-                  "DisplayName": "Game",
-                  "Position": "0"
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Game",
+                    "Position": "0"
+                  },
+                  "TextFieldSettings": {
+                    "Hint": ""
+                  }
                 }
               }
             ]

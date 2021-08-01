@@ -46,6 +46,7 @@
                     <div class="uk-grid">
                         <div class="uk-width-medium-2-6">
                             <h2 id="factsheet">@T["Factsheet"]</h2>
+
                             <p>
                                 <strong>@T["Developer:"]</strong><br>
                                 <a href="@Model.Factsheet.DeveloperWebsite">@Model.Factsheet.Developer</a><br>
@@ -63,54 +64,75 @@
                                     <a href="@platform.Url">@platform.Name</a><br>
                                 }
                             </p>
+
+                            @if (!string.IsNullOrWhiteSpace(Model.Factsheet.Website))
+                            {
                             <p>
                                 <strong>@T["Website:"]</strong><br>
                                 <a href="@Model.Factsheet.Website">@Model.Factsheet.Website.Replace("http://", "").Replace("https://", "")</a>
                             </p>
+                            }
+
+                            @if (!string.IsNullOrWhiteSpace(Model.Factsheet.RegularPrice))
+                            {
                             <p>
                                 <strong>@T["Regular Price:"]</strong><br>
                                 @Model.Factsheet.RegularPrice
                             </p>
+                            }
                         </div>
+
                         <div class="uk-width-medium-4-6">
-                            <h2 id="description">@T["Description"]</h2>
-
-                            @foreach (var block in Model.Description)
+                            @if (Model.Description.Any())
                             {
-                                @await DisplayAsync(block);
-                            }
+                                <h2 id="description">@T["Description"]</h2>
 
-                            <h2 id="history">@T["History"]</h2>
-
-                            @foreach (var block in Model.History)
-                            {
-                                @await DisplayAsync(block);
-                            }
-
-                            <h2>@T["Features"]</h2>
-                            <ul>
-                                @foreach (var feature in Model.Features)
+                                @foreach (var block in Model.Description)
                                 {
-                                    <li>@feature.Text</li>
+                                    @await DisplayAsync(block);
                                 }
-                            </ul>
+                            }
+
+                            @if (Model.History.Any())
+                            {
+                                <h2 id="history">@T["History"]</h2>
+
+                                @foreach (var block in Model.History)
+                                {
+                                    @await DisplayAsync(block);
+                                }
+                            }
+
+                            @if (Model.Features.Any())
+                            {
+                                <h2>@T["Features"]</h2>
+                                <ul>
+                                    @foreach (var feature in Model.Features)
+                                    {
+                                        <li>@feature.Text</li>
+                                    }
+                                </ul>
+                            }
                         </div>
                     </div>
 
                     <hr>
 
-                    <h2 id="trailers">@T["Videos"]</h2>
-
-                    @foreach (var video in Model.Videos)
+                    @if (Model.Videos.Any())
                     {
-                        <p><strong>@video.Title</strong>&nbsp;<a href="@video.VideoLinkUrl">@video.Platform</a></p>
-                        <div class="uk-responsive-width iframe-container">
-                            <iframe src="@video.VideoEmbedUrl" frameborder="0" allowfullscreen=""></iframe>
-                        </div>
-                        <p></p>
-                    }
+                        <h2 id="trailers">@T["Videos"]</h2>
 
-                    <hr>
+                        @foreach (var video in Model.Videos)
+                        {
+                            <p><strong>@video.Title</strong>&nbsp;<a href="@video.VideoLinkUrl">@video.Platform</a></p>
+                            <div class="uk-responsive-width iframe-container">
+                                <iframe src="@video.VideoEmbedUrl" frameborder="0" allowfullscreen=""></iframe>
+                            </div>
+                            <p></p>
+                        }
+
+                        <hr>
+                    }
 
                     <h2 id="images">@T["Images"]</h2>
 
@@ -159,34 +181,40 @@
 
                     <hr>
 
-                    <h2 id="quotes">@T["Selected Articles"]</h2>
-                    <ul>
-                        @foreach (var article in Model.Articles)
-                        {
-                            <li>
-                                "@article.Quote" <br>
-                                <cite>- @article.Author, <a href="@article.PlatformUrl">@article.PlatformText</a></cite>
-                            </li>
-                        }
-                    </ul>
+                    @if (Model.Articles.Any())
+                    {
+                        <h2 id="quotes">@T["Selected Articles"]</h2>
+                        <ul>
+                            @foreach (var article in Model.Articles)
+                            {
+                                <li>
+                                    "@article.Quote" <br>
+                                    <cite>- @article.Author, <a href="@article.PlatformUrl">@article.PlatformText</a></cite>
+                                </li>
+                            }
+                        </ul>
 
-                    <hr>
-
-                    <h2 id="links">@T["Additional Links"]</h2>
-
-                    <ul>
-                        @foreach (var link in Model.Links)
-                        {
-                            <li>
-                                <p>
-                                    @link.Title<br>
-                                @link.Description
-                            </p>
-                        </li>
+                        <hr>
                     }
-                    </ul>
 
-                    <hr>
+                    @if (Model.Links.Any())
+                    {
+                        <h2 id="links">@T["Additional Links"]</h2>
+
+                        <ul>
+                            @foreach (var link in Model.Links)
+                            {
+                                <li>
+                                    <p>
+                                        @link.Title<br>
+                                    @link.Description
+                                </p>
+                            </li>
+                            }
+                        </ul>
+
+                        <hr>
+                    }
 
                     <h2 id="about">@T["About"] @Model.Factsheet.Developer</h2>
                     <p>
@@ -202,6 +230,8 @@
                     <hr>
 
                     <div class="uk-grid">
+                        @if (Model.Credits.Any())
+                        {
                         <div class="uk-width-medium-1-2">
                             <h2 id="credits">@Model.Factsheet.Game @T["Credits"]</h2>
 
@@ -213,6 +243,10 @@
                                 </p>
                             }
                         </div>
+                        }
+
+                        @if (Model.Contacts.Any())
+                        {
                         <div class="uk-width-medium-1-2">
                             <h2 id="contact">@T["Contact"]</h2>
 
@@ -224,6 +258,7 @@
                                 </p>
                             }
                         </div>
+                        }
                     </div>
 
                     <hr>

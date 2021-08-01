@@ -8,7 +8,7 @@ Simplify creating press kits for games industry.
 
 ## Orchard Core Reference
 
-This module is referencing the beta 3 build of Orchard Core ([1.0.0-beta3-71077](https://www.nuget.org/packages/OrchardCore.Module.Targets/1.0.0-beta3-71077)).
+This module is referencing a stable build of Orchard Core ([`1.0.0`](https://www.nuget.org/packages/OrchardCore.Module.Targets/1.0.0)).
 
 ## Installing
 

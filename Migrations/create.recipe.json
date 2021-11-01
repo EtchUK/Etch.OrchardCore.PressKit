@@ -473,7 +473,7 @@
                 "Name": "Text",
                 "Settings": {
                   "ContentPartFieldSettings": {
-                    "DisplayName": "Url",
+                    "DisplayName": "Description",
                     "Editor": "TextArea",
                     "Position": "0"
                   },

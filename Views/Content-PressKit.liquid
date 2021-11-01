@@ -20,7 +20,7 @@
 {% assign contacts = Model.ContentItem.Content.Contact.ContentItems %}
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
         {{ Model.Header | shape_render }}
 
         <ul class="list list--horizontal list--horizontal-spaced">
@@ -41,7 +41,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
         <h2 id="factsheet">{{ "Factsheet" | t }}</h2>
 
         <ul class="list list--meta">
@@ -101,7 +101,7 @@
 {{ Model.History | shape_render }}
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="features">{{ "Features" | t }}</h2>
 
         <ul>
@@ -113,7 +113,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="videos">{{ "Videos" | t }}</h2>
 
         <ul class="list">
@@ -133,7 +133,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="images">{{ "Images" | t }}</h2>
 
         {% if images.Zip.Paths != null %}
@@ -153,7 +153,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="logo">{{ "Logo & Icon" | t }}</h2>
 
         {% if logoIcon.Zip.Paths != null %}
@@ -181,7 +181,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="articles">{{ "Selected Articles" | t }}</h2>
 
         <ul class="list">
@@ -196,7 +196,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="links">{{ "Additional Links" | t }}</h2>
 
         <ul class="list">
@@ -211,7 +211,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="about">{{ "About" | t }} {{ developerName }}</h2>
 
         <h3>{{ "Boilerplate" | t }}</h3>
@@ -223,7 +223,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="credits">{{ Model.ContentItem.Content.PressKit.Game.Text }} {{ "Credits" | t }}</h2>
 
         <ul class="list">
@@ -243,7 +243,7 @@
 </section>
 
 <section class="section">
-    <div class="section__content">
+    <div class="section__content constrain">
 	    <h2 id="contact">{{ "Contact" | t }}</h2>
 
         <ul class="list">

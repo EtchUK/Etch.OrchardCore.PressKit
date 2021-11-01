@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Etch.OrchardCore.Blocks" Version="1.1.0" />
+    <PackageReference Include="Etch.OrchardCore.Blocks" Version="1.1.1" />
     <PackageReference Include="OrchardCore.ContentFields" Version="1.1.0" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="1.1.0" />
     <PackageReference Include="OrchardCore.ContentManagement.Display" Version="1.1.0" />

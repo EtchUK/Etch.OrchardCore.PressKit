@@ -27,15 +27,42 @@
             <li><a href="#factsheet">{{ "Factsheet" | t }}</a></li>
             <li><a href="#description">{{ "Description" | t }}</a></li>
             <li><a href="#history">{{ "History" | t }}</a></li>
+
+            {% if features.size > 0 %}
             <li><a href="#features">{{ "Features" | t }}</a></li>
+            {% endif %}
+
+            {% if videos.size > 0 %}
             <li><a href="#videos">{{ "Videos" | t }}</a></li>
+            {% endif %}
+
+            {% if images.Zip.Paths.size > 0 or images.Images.Paths.size > 0 %}
             <li><a href="#images">{{ "Images" | t }}</a></li>
+            {% endif %}
+
+            {% if logoIcon.Zip.Paths.size > 0 or logoIcon.Logo.Paths.size > 0 or logoIcon.Icon.Paths.size > 0 %}
             <li><a href="#logo">{{ "Logo & Icon" | t }}</a></li>
+            {% endif %}
+
+            {% if articles.size > 0 %}
             <li><a href="#articles">{{ "Selected Articles" | t }}</a></li>
+            {% endif %}
+
+            {% if links.size > 0 %}
             <li><a href="#links">{{ "Additional Links" | t }}</a></li>
+            {% endif %}
+
+            {% if studio.Boilerplate.Text != nil or studio.MoreInformation.Text != nil %}
             <li><a href="#about">{{ "About Studio" | t }}</a></li>
+            {% endif %}
+
+            {% if credits.size > 0 %}
             <li><a href="#credits">{{ "Credits" | t }}</a></li>
+            {% endif %}
+
+            {% if contacts.size > 0 %}
             <li><a href="#contact">{{ "Contact" | t }}</a></li>
+            {% endif %}
         </ul>
     </div>
 </section>
@@ -100,6 +127,7 @@
 {{ Model.Description | shape_render }}
 {{ Model.History | shape_render }}
 
+{% if features.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="features">{{ "Features" | t }}</h2>
@@ -111,7 +139,9 @@
         </ul>
     </div>
 </section>
+{% endif %}
 
+{% if videos.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="videos">{{ "Videos" | t }}</h2>
@@ -131,7 +161,9 @@
         </ul>
     </div>
 </section>
+{% endif %}
 
+{% if images.Zip.Paths.size > 0 or images.Images.Paths.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="images">{{ "Images" | t }}</h2>
@@ -151,7 +183,9 @@
         </ul>
     </div>
 </section>
+{% endif %}
 
+{% if logoIcon.Zip.Paths.size > 0 or logoIcon.Logo.Paths.size > 0 or logoIcon.Icon.Paths.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="logo">{{ "Logo & Icon" | t }}</h2>
@@ -179,7 +213,9 @@
         </ul>
     </div>
 </section>
+{% endif %}
 
+{% if articles.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="articles">{{ "Selected Articles" | t }}</h2>
@@ -194,7 +230,9 @@
         </ul>
     </div>
 </section>
+{% endif %}
 
+{% if links.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="links">{{ "Additional Links" | t }}</h2>
@@ -209,7 +247,9 @@
         </ul>
     </div>
 </section>
+{% endif %}
 
+{% if studio.Boilerplate.Text != nil or studio.MoreInformation.Text != nil %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="about">{{ "About" | t }} {{ developerName }}</h2>
@@ -221,7 +261,9 @@
         <p>{{ studio.MoreInformation.Text | raw }}</p>
     </div>
 </section>
+{% endif %}
 
+{% if credits.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="credits">{{ Model.ContentItem.Content.PressKit.Game.Text }} {{ "Credits" | t }}</h2>
@@ -241,7 +283,9 @@
         </ul>
     </div>
 </section>
+{% endif %}
 
+{% if contacts.size > 0 %}
 <section class="section">
     <div class="section__content constrain">
 	    <h2 id="contact">{{ "Contact" | t }}</h2>
@@ -257,3 +301,4 @@
         </ul>
     </div>
 </section>
+{% endif %}

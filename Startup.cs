@@ -9,15 +9,11 @@ namespace Etch.OrchardCore.PressKit
 {
     public class Startup : StartupBase
     {
-        static Startup()
-        {
-
-        }
-
         public override void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ContentPart, Models.PressKit>();
-            services.AddScoped<IContentPartDisplayDriver, PressKitDisplay>();
+            services.AddContentPart<Models.PressKit>()
+                .UseDisplayDriver<PressKitDisplay>();
+
             services.AddScoped<IDataMigration, Migrations>();
         }
     }

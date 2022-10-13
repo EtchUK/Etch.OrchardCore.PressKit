@@ -4,17 +4,17 @@ Simplify creating press kits for games industry.
 
 ## Build Status
 
-[![Build Status](https://secure.travis-ci.org/etchuk/Etch.OrchardCore.PressKit.png?branch=master)](http://travis-ci.org/etchuk/Etch.OrchardCore.PressKit) [![NuGet](https://img.shields.io/nuget/v/Etch.OrchardCore.PressKit.svg)](https://www.nuget.org/packages/Etch.OrchardCore.PressKit)
+[![Build Status](https://secure.travis-ci.org/etchuk/Etch.OrchardCore.PressKit.png?branch=main)](http://travis-ci.org/etchuk/Etch.OrchardCore.PressKit) [![NuGet](https://img.shields.io/nuget/v/Etch.OrchardCore.PressKit.svg)](https://www.nuget.org/packages/Etch.OrchardCore.PressKit)
 
 ## Orchard Core Reference
 
-This module is referencing a stable build of Orchard Core ([`1.3.0`](https://www.nuget.org/packages/OrchardCore.Module.Targets/1.3.0)).
+This module is referencing a stable build of Orchard Core ([`1.4.0`](https://www.nuget.org/packages/OrchardCore.Module.Targets/1.4.0)).
 
 ## Installing
 
 This module is available on NuGet. Add a reference to your Orchard Core web project via the NuGet package manager. Search for "Etch.OrchardCore.PressKit", ensuring include prereleases is checked.
 
-Alternatively, [download the source](https://github.com/etchuk/Etch.OrchardCore.PressKit/archive/master.zip) or clone the repository to your local machine. Add the project to your solution that contains an Orchard Core project and add a reference to Etch.OrchardCore.PressKit.
+Alternatively, [download the source](https://github.com/etchuk/Etch.OrchardCore.PressKit/archive/main.zip) or clone the repository to your local machine. Add the project to your solution that contains an Orchard Core project and add a reference to Etch.OrchardCore.PressKit.
 
 ## Usage
 

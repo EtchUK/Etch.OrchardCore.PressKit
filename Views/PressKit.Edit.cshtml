@@ -1,9 +1,9 @@
 ﻿@model Etch.OrchardCore.PressKit.ViewModels.PressKitEditViewModel
 
-<fieldset class="form-group">
-    <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" asp-for="UsePressKitDisplay" checked="@Model.UsePressKitDisplay" />
-        <label class="custom-control-label" asp-for="UsePressKitDisplay">@T["Use presskit() Display"]</label>
+<fieldset class="mb-3">
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="UsePressKitDisplay" checked="@Model.UsePressKitDisplay" />
+        <label class="form-check-label" asp-for="UsePressKitDisplay">@T["Use presskit() Display"]</label>
         <span class="hint">— @T["Check to have press kit displayed like <a href=\"{0}\">presskit()</a>.", "http://dopresskit.com"]</span>
     </div>
 </fieldset>

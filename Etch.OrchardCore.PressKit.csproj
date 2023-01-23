@@ -12,6 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove=".gitignore" />
+    <EmbeddedResource Remove="azure-pipelines.yml" />
+    <EmbeddedResource Remove="nuget.config" />
+    <EmbeddedResource Remove="LICENSE.md" />
+    <EmbeddedResource Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Etch.OrchardCore.Blocks" Version="1.5.0" />
     <PackageReference Include="OrchardCore.ContentFields" Version="1.4.0" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="1.4.0" />
